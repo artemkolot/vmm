@@ -1,0 +1,34 @@
+header nav {
+    height: 104px;
+    padding: 20px 0;
+}
+header nav  {
+    .contact-phone{ 
+        a{
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #595959;
+
+        }
+        i{
+            font-size: 18px;
+            margin-right: 10px;
+            color: #02AE70;
+        }
+    }
+    .profile{
+        padding-left: 20px;
+        border-right: 1px solid #ccc;
+        padding-right: 20px;}
+        .search{
+            border-right: 1px solid #ccc;
+            padding-right: 20px;
+        }
+        .cart{
+            padding-left: 20px;
+            i{ 
+                color: #02AE70;
+            }
+        }
+    }

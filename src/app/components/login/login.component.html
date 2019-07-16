@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-12 mb-5">
+        <h1>Васильковская Мягкая Мебель</h1>
+    </div>
+    <div class="col-4">
+        <h2>Регистрация</h2>
+      <form  formGroup="registerForm">
+        <div class="form-group">
+          <label for="name">Имя</label>
+          <input formControl="firstName" required type="text" class="form-control" id="name">
+          <br>
+          <label for="last-name">Фамилия</label>
+          <input formControl="lastName" type="text" class="form-control" id="last-name">
+          <br>
+          <label for="email">Email</label>
+          <input formControl="email" required type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input formControl="password" required type="password" class="form-control" id="password">
+          <br>
+          <label for="password2">Повторите пароль</label>
+          <input formControl="passwordAgree"required type="password" class="form-control" id="password2">
+        </div>
+        <div class="text-center mt-5">
+          <button class="btn btn-success" (click)="register()">Зарегистрироваться</button>
+        </div>
+      </form> 
+    </div>
+    <div class="col-4">
+        <h2>Вход</h2>
+        <form  formGroup="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input formControl="email" required type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Пароль</label>
+            <input formControl="password" required type="password" class="form-control" id="password">
+          </div>
+          <div class="text-center mt-5">
+            <button class="btn btn-success" (click)="login()">Войти</button>
+          </div>
+        </form> 
+      </div>
+
+<!-- 
+      <div class="col-xs-12 ">
+          <nav>
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+              <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#nav-about" role="tab" aria-controls="nav-about" aria-selected="false">About</a>
+            </div>
+          </nav>
+          <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+            </div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+            </div>
+            <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+              Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+            </div>
+          </div>
+        
+        </div> -->
+
+
+  </div>
+</div>

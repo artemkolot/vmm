@@ -1,0 +1,30 @@
+.my-card{
+    img{
+        width: 100%;
+    }
+    form{
+        span{
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        input{
+            width: 100px;
+            height: 38px;
+            margin: 0 10px;
+        }
+        button{
+            vertical-align: top !important;
+        }
+    }
+    .card-discription{
+        font-size: 16px;
+        padding: 10px;
+        ul{
+            li{
+                font-size: 16px;
+            }
+        }
+    }
+}

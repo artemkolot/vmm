@@ -1,0 +1,26 @@
+<div class="container" *ngIf="card">
+  <h4>{{ card.name }}</h4>
+    <div class="my-card row mb-5">
+      <div class="col-8">
+        <img src="{{ card.img }}" alt="">
+      </div>
+      <div class="col-4">
+        <form>
+          <span>Наличие: {{ card.count }}</span>
+          <label>К-во:</label>
+          <input type="number" min="1" max="{{ card.count }}" value="1">
+          <button class="btn" [ngClass]="{'btn-success': checkProductStatus, 'btn-danger': !checkProductStatus}" (click)="changeStatus($event, card.id)">{{statusText }}</button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card-discription col-12 border">
+        <span>Описание:</span>
+        <ul>
+          {{ card.discription }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  

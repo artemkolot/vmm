@@ -1,0 +1,30 @@
+
+<div class="container">
+  <h1>Васильковская Мягкая Мебель</h1>
+  <h2>Далеко-далеко за словесными горами в стране.</h2>
+
+  <div class="loader" *ngIf="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="pozitions row" [ngClass]="{'active': !loader}">
+    <div *ngFor="let model of models" class="col-3">
+      <a [routerLink]="['/products']" [queryParams]="{ id : model.id }">
+        <div class="pozitions-item">	 	
+          <img src="{{ model.img }}">
+          <div class="positions-discription">
+            <h3>{{ model.name }}</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
