@@ -5,23 +5,23 @@
     </div>
     <div class="col-4">
         <h2>Регистрация</h2>
-      <form  formGroup="registerForm">
+      <form  [formGroup]="registerForm">
         <div class="form-group">
           <label for="name">Имя</label>
-          <input formControl="firstName" required type="text" class="form-control" id="name">
+          <input formControlName="firstName" required type="text" class="form-control" id="name">
           <br>
           <label for="last-name">Фамилия</label>
-          <input formControl="lastName" type="text" class="form-control" id="last-name">
+          <input formControlName="lastName" type="text" class="form-control" id="last-name">
           <br>
           <label for="email">Email</label>
-          <input formControl="email" required type="email" class="form-control" id="email">
+          <input formControlName="email" required type="email" class="form-control" id="email">
         </div>
         <div class="form-group">
           <label for="password">Пароль</label>
-          <input formControl="password" required type="password" class="form-control" id="password">
+          <input formControlName="password" required type="password" class="form-control" id="password">
           <br>
           <label for="password2">Повторите пароль</label>
-          <input formControl="passwordAgree"required type="password" class="form-control" id="password2">
+          <input formControlName="passwordAgree" required type="password" class="form-control" id="password2">
         </div>
         <div class="text-center mt-5">
           <button class="btn btn-success" (click)="register()">Зарегистрироваться</button>
@@ -30,14 +30,14 @@
     </div>
     <div class="col-4">
         <h2>Вход</h2>
-        <form  formGroup="loginForm">
+        <form  [formGroup]="loginForm">
           <div class="form-group">
             <label for="email">Email</label>
-            <input formControl="email" required type="email" class="form-control" id="email">
+            <input formControlName="email" required type="email" class="form-control" id="email">
           </div>
           <div class="form-group">
             <label for="password">Пароль</label>
-            <input formControl="password" required type="password" class="form-control" id="password">
+            <input formControlName="password" required type="password" class="form-control" id="password">
           </div>
           <div class="text-center mt-5">
             <button class="btn btn-success" (click)="login()">Войти</button>

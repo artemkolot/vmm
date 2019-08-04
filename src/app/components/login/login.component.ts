@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  registerForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email:  new FormControl(''),
-    password : new FormControl(''),
-    passwordAgree : new FormControl('')
+  public registerForm = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email:  new FormControl('', Validators.required),
+    password : new FormControl('', Validators.required),
+    passwordAgree : new FormControl('', Validators.required)
   });
 
   loginForm = new FormGroup({
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
     password : new FormControl('')
   });
 
-  constructor() {
+  constructor(private http: HttpClient) {
 
    }
 
@@ -29,7 +31,21 @@ export class LoginComponent implements OnInit {
   }
 
   register(){
-
+    let data = {
+      user: {
+        firstName: this.registerForm.get('firstName').value,
+        lastName:  this.registerForm.get('lastName').value,
+        email:   this.registerForm.get('email').value,
+        password :  this.registerForm.get('password').value
+      }
+    }
+    if (this.registerForm.valid) {
+      this.http.post(environment.baseUrl+'reg.php', data, {responseType: 'text'}).subscribe(res=>{
+        console.log(res);
+      })
+    }
+    
+    // this.http.post()
   };
 
   login(){

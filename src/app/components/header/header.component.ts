@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     public idb: IdbService ) {
     this.countProduct = this.cartService.productsCount;
     this.idb.obsProducts$.subscribe(res=>{
-      this.countProduct = res.length; 
+      this.countProduct = res.length;
     })
    }
 

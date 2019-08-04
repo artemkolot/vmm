@@ -8,7 +8,7 @@ export class IdbService {
 
   constructor() { 
     this.initialize();
-    let suqa = this.set('Products', [1,2,3,4,5]).then(res=>{
+    let suqa = this.set('Products', []).then(res=>{
       this.get('Products').then(res=>{
         this.setProduct = res;
       });
@@ -19,7 +19,7 @@ export class IdbService {
   public obsProducts$ = this.obsProducts.asObservable();
   public set setProduct(product) {
     this.obsProducts.next(product);
-    this.obsProducts.complete();
+    console.log(product);
   }
   
   initialize () {
@@ -78,6 +78,7 @@ export class IdbService {
         const tx = db.transaction('user_request_profile', 'readwrite');
         const st = tx.objectStore('user_request_profile');
         const sRequest = st.put(value, key);
+        self.setProduct = value;
         sRequest.onsuccess = function() {
           resolve();
         };

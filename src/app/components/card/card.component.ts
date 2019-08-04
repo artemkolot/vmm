@@ -43,17 +43,19 @@ export class CardComponent implements OnInit {
       let productsArray;
       this.idb.get('Products').then(res=>{
         productsArray = res;
-        console.log(productsArray);
       }).then(()=>{
         if(this.checkProductStatus){
+          productsArray.length = productsArray.length-1;
           this.statusText = "Добавить в корзину";
-          console.log(productsArray);
           this.idb.set('Products', productsArray).then(res=>{
             console.log('set', res);
           })
           this.cartService.setCount = this.cartService.productsCount+1;
         } else{
-          console.log(productsArray);
+          productsArray.push(this.id);
+          this.idb.set('Products', productsArray).then(res=>{
+            console.log('set', res);
+          })
           this.statusText = "Удалить из корзины";
           this.cartService.setCount = this.cartService.productsCount-1;
         }
