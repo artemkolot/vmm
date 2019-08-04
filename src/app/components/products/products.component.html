@@ -14,20 +14,20 @@
     <div></div>
   </div>
   
-  <iframe width="600" height="300" [src]='sanitizer.bypassSecurityTrustResourceUrl(products[products.length-1]["video"])' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe *ngIf="products" width="600" height="300" [src]='sanitizer.bypassSecurityTrustResourceUrl(products[products.length-1]["video"])' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <div class="pozitions row mt-5" [ngClass]="{'active': !loader}">
     <div *ngFor="let product of products; let last = last;" class='product-item col-3' >
       <div *ngIf="!last">
-      <a [routerLink]="[ '/card']" [queryParams]="{id : product.id }">
+      <a [routerLink]="[ '/card']" [queryParams]="{id : product?.id }">
         <div class='pozitions-item'>
-          <img src="{{ product.img }}">
+          <img src="{{ product?.img }}">
           <div class='positions-discription'>
-            <h3>{{ product.name }}</h3>
+            <h3>{{ product?.name }}</h3>
           </div>
         </div>
       </a>
     </div>
     </div>
   </div>
-  <span *ngIf="products.length==1">Этого товара еще нет в наличии</span>
+  <span *ngIf="products?.length==1">Этого товара еще нет в наличии</span>
 </div>

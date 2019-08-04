@@ -20,7 +20,6 @@ export class ProductsComponent implements OnInit {
     let takeId = this.activeRoute.queryParams.subscribe(res=>{
       this.id = res.id;
     });
-
     this.http.get(environment.baseUrl+'products.php?id='+this.id, {responseType: 'json'}).subscribe(res => {
       this.products = res['products'];
     },

@@ -3,6 +3,11 @@ header nav {
     padding: 20px 0;
 }
 header nav  {
+    .brand{
+        img{
+            width: 120px;
+        }
+    }
     .contact-phone{ 
         a{
             font-size: 15px;
